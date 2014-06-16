@@ -19,7 +19,7 @@ class ToneTestLayout < MotionKit::Layout
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
-    center ['25%', '75% + 50']
+    center ['25%', '100%']
   end
 
 	def two_sound_button_style
@@ -27,7 +27,7 @@ class ToneTestLayout < MotionKit::Layout
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
-		center ['75%', '75% + 50']
+		center ['75%', '100%']
 	end
 
 	def play_button_style
@@ -44,7 +44,7 @@ class ToneTestLayout < MotionKit::Layout
 		font UIFont.systemFontOfSize(18)
 		height '24'
 		width '100%'
-		center ['50%', '60%']
+		center ['50%', '50%']
 	end
 
 end
