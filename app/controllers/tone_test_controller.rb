@@ -11,4 +11,8 @@ class ToneTestController < UIViewController
 		@button.when(UIControlEventTouchUpInside) {NSLog 'Touched!'}
 	end
 
+	def shouldAutorotate
+		false
+	end
+
 end
