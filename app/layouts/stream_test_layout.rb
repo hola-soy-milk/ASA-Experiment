@@ -10,7 +10,6 @@ class StreamTestLayout < MotionKit::Layout
 		@one_sound_button = add UIButton.buttonWithType(UIButtonTypeSystem), :one_sound_button
 		@two_sound_button = add UIButton.buttonWithType(UIButtonTypeSystem), :two_sound_button
 		@play_button = add UIButton.buttonWithType(UIButtonTypeSystem), :play_button
-		@label.textAlignment = NSTextAlignmentCenter
 	end
 
 	def one_sound_button_style
@@ -45,6 +44,7 @@ class StreamTestLayout < MotionKit::Layout
 		height '24'
 		width '100%'
 		center ['50%', '50%']
+		textAlignment UITextAlignmentCenter
 	end
 
 end
