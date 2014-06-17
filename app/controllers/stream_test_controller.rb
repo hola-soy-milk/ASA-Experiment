@@ -1,6 +1,6 @@
-class ToneTestController < UIViewController
+class StreamTestController < UIViewController
 	def loadView
-		@layout = ToneTestLayout.new
+		@layout = StreamTestLayout.new
 
 		self.view = @layout.view
 

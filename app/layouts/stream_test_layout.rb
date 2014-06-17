@@ -1,4 +1,4 @@
-class ToneTestLayout < MotionKit::Layout
+class StreamTestLayout < MotionKit::Layout
 
 	view :one_sound_button
 	view :two_sound_button
