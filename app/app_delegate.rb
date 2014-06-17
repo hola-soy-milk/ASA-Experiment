@@ -1,7 +1,7 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    @window.rootViewController = StreamTestController.new
+    @window.rootViewController = TutorialController.new
     @window.makeKeyAndVisible
     true
   end
