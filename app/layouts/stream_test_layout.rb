@@ -39,7 +39,7 @@ class StreamTestLayout < MotionKit::Layout
 	end
 
 	def question_label_style
-		text 'How many tones can you hear?'
+		text 'How many streams can you hear?'
 		text_color UIColor.blackColor
 		font UIFont.systemFontOfSize(18)
 		height '24'
