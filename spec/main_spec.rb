@@ -1,4 +1,4 @@
-describe "Application 'ToneTest'" do
+describe "Application 'ASA-Experiment'" do
   before do
     @app = UIApplication.sharedApplication
   end
