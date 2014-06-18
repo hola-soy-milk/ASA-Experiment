@@ -1,6 +1,6 @@
 class StreamTestController < UIViewController
 	def loadView
-		@layout = StreamTestLayout.new
+		@layout = VanNoordenLayout.new
 
 		self.view = @layout.view
 

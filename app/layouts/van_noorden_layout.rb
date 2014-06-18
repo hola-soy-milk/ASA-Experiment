@@ -1,4 +1,4 @@
-class StreamTestLayout < MotionKit::Layout
+class VanNoordenLayout < MotionKit::Layout
 
 	view :one_sound_button
 	view :two_sound_button
