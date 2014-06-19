@@ -1,6 +1,11 @@
 class TutorialController < UIViewController
 	def loadView
-		@layout = TutorialLayout.new
+
+		if UIApplication.sharedApplication.delegate.van_hoorden_sounds.all? {|tone| tone.answer}
+			@layout = TutorialLayoutMillerAndHeise.new
+		else
+			@layout = TutorialLayout.new
+		end
 
 		self.view = @layout.view
 	end
