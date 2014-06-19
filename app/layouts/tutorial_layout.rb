@@ -8,6 +8,7 @@ class TutorialLayout < MotionKit::Layout
 		add UILabel, :one_stream_label
 		add UILabel, :two_stream_label
 		add UILabel, :time_limit_label
+		add UILabel, :time_limit_middle_label
 		add UILabel, :time_limit_lower_label
 		add UIButton.buttonWithType(UIButtonTypeSystem), :play_one_button
 		add UIButton.buttonWithType(UIButtonTypeSystem), :play_two_button
@@ -16,7 +17,7 @@ class TutorialLayout < MotionKit::Layout
 
 	def label_default(position, label_text)
 		text label_text
-		font UIFont.systemFontOfSize(18)
+		font UIFont.systemFontOfSize(12)
 		height '18'
 		width '100%'
 		center position
@@ -32,10 +33,13 @@ class TutorialLayout < MotionKit::Layout
 	end
 
 	def time_limit_label_style
-		label_default(['50%', '75%'], "You'll have a short time to decide")
+		label_default(['50%', '75%'], "After hearing the stimulus,")
+	end
+	def time_limit_middle_label_style
+		label_default(['50%', '78%'], "you'll have 5 seconds time to give your answer.")
 	end
 	def time_limit_lower_label_style
-		label_default(['50%', '80%'], "how many you hear!")
+		label_default(['50%', '81%'], "After that the next stimulus starts automatically.")
 	end
 
 
@@ -56,7 +60,7 @@ class TutorialLayout < MotionKit::Layout
 	end
 
 	def start_button_style
-		button_default(['50%', '90%'], 'I Understand')
+		button_default(['50%', '90%'], 'OK')
 	end
 
 
