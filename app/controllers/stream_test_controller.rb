@@ -15,7 +15,10 @@ class StreamTestController < UIViewController
 
 	def viewDidLoad
 		super
-		# @play_button.when(UIControlEventTouchUpInside) {NSLog 'Touched!'}
+		@play_button.when(UIControlEventTouchUpInside) do
+			@tone.play
+			@play_button.enabled = false
+		end
 	end
 
 	def shouldAutorotate

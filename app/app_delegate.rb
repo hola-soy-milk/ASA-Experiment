@@ -1,7 +1,7 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    @window.rootViewController = TutorialController.new
+    @window.rootViewController = StreamTestController.alloc.initWithSoundFile('vn.wav')
     @window.makeKeyAndVisible
     true
   end

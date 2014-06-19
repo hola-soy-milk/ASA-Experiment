@@ -1,6 +1,8 @@
 describe "Tone" do
+	before do
+		@delegate.stub{}
 	context "Van Noorden tone" do
-		before { @tone = Tone.new 'vn.mp3' }
+		before { @tone = Tone.new('vn.mp3', nil) }
 
 		it 'is a Van Noorden type' do
 			@tone.type.should.equal 'Van Noorden'
@@ -17,7 +19,7 @@ describe "Tone" do
 
 	context "Miller & Heise tone" do
 
-		before { @tone = Tone.new 'mh.mp3' }
+		before { @tone = Tone.new('mh.mp3', nil) }
 
 		it 'is a Miller & Heise type' do
 			@tone.type.should.equal 'Miller & Heise'
