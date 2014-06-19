@@ -1,18 +1,28 @@
 class StreamTestController < UIViewController
+	def initWithSoundFile(file)
+		initWithNibName(nil, bundle:nil)
+		@tone = Tone.new(file, Proc.new {show_choices})
+		self
+	end
+
 	def loadView
-		@layout = VanNoordenLayout.new
+		@layout = @tone.layout
 
 		self.view = @layout.view
 
-		@button = @layout.one_sound_button
+		@play_button = @layout.play_button
 	end
 
 	def viewDidLoad
-		@button.when(UIControlEventTouchUpInside) {NSLog 'Touched!'}
+		super
+		# @play_button.when(UIControlEventTouchUpInside) {NSLog 'Touched!'}
 	end
 
 	def shouldAutorotate
 		false
+	end
+
+	def show_choices
 	end
 
 end
