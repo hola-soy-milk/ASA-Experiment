@@ -3,6 +3,10 @@ class AppDelegate
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    start_experiment
+  end
+
+  def start_experiment
     self.van_hoorden_sounds = NSFileManager.defaultManager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /vn/}
     self.van_hoorden_sounds.map! {|file| Tone.new(file)}
     self.miller_and_heise_sounds = NSFileManager.defaultManager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /mh/}
