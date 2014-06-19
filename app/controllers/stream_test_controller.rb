@@ -1,7 +1,8 @@
 class StreamTestController < UIViewController
-	def initWithSoundFile(file)
+	def initWithTone(tone)
 		initWithNibName(nil, bundle:nil)
-		@tone = Tone.new(file, Proc.new {show_choices})
+		@tone = tone
+		tone.finished_playing = Proc.new {show_choices}
 		self
 	end
 
