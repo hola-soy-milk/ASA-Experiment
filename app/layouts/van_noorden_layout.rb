@@ -14,6 +14,7 @@ class VanNoordenLayout < MotionKit::Layout
 			@two_sound_button = add UIButton.buttonWithType(UIButtonTypeSystem), :two_sound_button
 			@cant_say_sound_button = add UIButton.buttonWithType(UIButtonTypeSystem), :cant_say_sound_button
 			@label = add UILabel, :question_label
+			add UILabel, :question_below_label
 		end
 	end
 
@@ -22,7 +23,7 @@ class VanNoordenLayout < MotionKit::Layout
 	end
 
 	def one_sound_button_style
-    title 'One Coherent Stream'
+    title 'One'
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
@@ -30,7 +31,7 @@ class VanNoordenLayout < MotionKit::Layout
   end
 
 	def two_sound_button_style
-		title 'Two Coherent Streams'
+		title 'Two'
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
@@ -63,4 +64,13 @@ class VanNoordenLayout < MotionKit::Layout
 		textAlignment UITextAlignmentCenter
 	end
 
+	def question_below_label_style
+		text '(One coherent or two interwoven)'
+		text_color UIColor.blackColor
+		font UIFont.systemFontOfSize(18)
+		height '24'
+		width '100%'
+		center ['50%', '60%']
+		textAlignment UITextAlignmentCenter
+	end
 end

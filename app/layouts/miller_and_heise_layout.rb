@@ -11,6 +11,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 			@label = add UILabel, :question_label
 			add UIButton.buttonWithType(UIButtonTypeSystem), :one_stream_button
 			add UIButton.buttonWithType(UIButtonTypeSystem), :two_stream_button
+			add UILabel, :question_below_label
 		end
 		@play_button = add UIButton.buttonWithType(UIButtonTypeSystem), :play_button
 	end
@@ -28,7 +29,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	end
 
 	def two_stream_button_style
-		title 'Two Interwoven Streams'
+		title 'Two'
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
@@ -50,6 +51,16 @@ class MillerAndHeiseLayout < MotionKit::Layout
 		height '24'
 		width '100%'
 		center ['50%', '50%']
+		textAlignment UITextAlignmentCenter
+	end
+
+	def question_below_label_style
+		text '(One twiller or two interwoven)'
+		text_color UIColor.blackColor
+		font UIFont.systemFontOfSize(18)
+		height '24'
+		width '100%'
+		center ['60%', '50%']
 		textAlignment UITextAlignmentCenter
 	end
 end
