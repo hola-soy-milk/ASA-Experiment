@@ -77,6 +77,7 @@ class StreamTestController < UIViewController
 	end
 
 	def next_round
+		NSLog @tone.answer 
 		if finished_with_van_noorden? && finished_with_miller_and_heise?
 			NSLog 'finished'
 		elsif finished_with_van_noorden?
