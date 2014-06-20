@@ -25,11 +25,11 @@ class TutorialLayoutMillerAndHeise < MotionKit::Layout
 	end
 
 	def one_stream_label_style
-		label_default(['50%', '10%'], 'This is what triller sounds like:')
+		label_default(['50%', '10%'], 'This is what trill sounds like:')
 	end
 
 	def two_stream_label_style
-		label_default(['50%', '40%'], 'This is what coherence sound like:')
+		label_default(['50%', '40%'], 'This is what two interwoven streams sound like:')
 	end
 
 	def time_limit_label_style
@@ -52,11 +52,11 @@ class TutorialLayoutMillerAndHeise < MotionKit::Layout
 	end
 
 	def play_one_button_style
-		button_default(['50%', '20%'], 'Play Triller')
+		button_default(['50%', '20%'], 'Play Trill')
 	end
 
 	def play_two_button_style
-		button_default(['50%', '50%'], 'Play Coherence')
+		button_default(['50%', '50%'], 'Play Two Interwoven Streams')
 	end
 
 	def start_button_style

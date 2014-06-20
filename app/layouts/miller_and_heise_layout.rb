@@ -20,7 +20,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	end
 
 	def one_stream_button_style
-		title 'Triller'
+		title 'Trill'
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
@@ -28,7 +28,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	end
 
 	def two_stream_button_style
-		title 'Coherence'
+		title 'Two Interwoven Streams'
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
@@ -44,7 +44,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	end
 
 	def question_label_style
-		text 'How does it sound?'
+		text 'What can you hear?'
 		text_color UIColor.blackColor
 		font UIFont.systemFontOfSize(18)
 		height '24'

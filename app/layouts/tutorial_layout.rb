@@ -25,11 +25,11 @@ class TutorialLayout < MotionKit::Layout
 	end
 
 	def one_stream_label_style
-		label_default(['50%', '10%'], 'This is what one stream sounds like:')
+		label_default(['50%', '10%'], 'This is what one coherent stream sounds like:')
 	end
 
 	def two_stream_label_style
-		label_default(['50%', '40%'], 'This is what two streams sound like:')
+		label_default(['50%', '40%'], 'This is what two interwoven streams sound like:')
 	end
 
 	def time_limit_label_style
@@ -52,11 +52,11 @@ class TutorialLayout < MotionKit::Layout
 	end
 
 	def play_one_button_style
-		button_default(['50%', '20%'], 'Play One Stream')
+		button_default(['50%', '20%'], 'Play one coherent stream')
 	end
 
 	def play_two_button_style
-		button_default(['50%', '50%'], 'Play Two Streams')
+		button_default(['50%', '50%'], 'Play two interwoven streams')
 	end
 
 	def start_button_style

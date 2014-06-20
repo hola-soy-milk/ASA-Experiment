@@ -22,7 +22,7 @@ class VanNoordenLayout < MotionKit::Layout
 	end
 
 	def one_sound_button_style
-    title 'One'
+    title 'One Coherent Stream'
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
@@ -30,7 +30,7 @@ class VanNoordenLayout < MotionKit::Layout
   end
 
 	def two_sound_button_style
-		title 'Two'
+		title 'Two Coherent Streams'
 		font UIFont.systemFontOfSize(24)
 		height '25'
 		width '100'
