@@ -7,7 +7,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 
 	def layout
 		background_color UIColor.whiteColor
-		add UIView, :question
+		add UIView, :question do
 			@label = add UILabel, :question_label
 			add UIButton.buttonWithType(UIButtonTypeSystem), :one_stream_button
 			add UIButton.buttonWithType(UIButtonTypeSystem), :two_stream_button
