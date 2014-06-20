@@ -1,7 +1,8 @@
 class TutorialController < UIViewController
+	include SoundsHelpers
 	def loadView
 
-		if UIApplication.sharedApplication.delegate.van_hoorden_sounds.all? {|tone| tone.answer}
+		if finished_with_van_noorden?
 			@layout = TutorialLayoutMillerAndHeise.new
 			@type = :miller_and_heise
 		else
@@ -10,6 +11,9 @@ class TutorialController < UIViewController
 			@sound2 = Tone.new('tutorial_2.wav')
 			@type = :van_noorden
 		end
+
+		@sound1.finished_playing = Proc.new {NSLog "Finished"}
+		@sound2.finished_playing = Proc.new {NSLog "Finished"}
 
 		self.view = @layout.view
 
