@@ -13,6 +13,14 @@ class Tone
 		@sound.play
 	end
 
+	def is_playing?
+		@sound.isPlaying
+	end
+
+	def stop
+		@sound.stop
+	end
+
 	def type
 		@tone.type
 	end
