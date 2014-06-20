@@ -11,6 +11,9 @@ class StreamTestController < UIViewController
 
 		self.view = @layout.view
 
+		@question_view = @layout.question
+		@question_view.hidden = true
+
 		@play_button = @layout.play_button
 	end
 
