@@ -1,5 +1,4 @@
 class StreamTestController < UIViewController
-
 	include SoundsHelpers
 
 	def initWithTone(tone)
@@ -34,10 +33,11 @@ class StreamTestController < UIViewController
 
 	def show_choices
 		@question_view.hidden = false
+		performSelector("did_not_answer", withObject:nil, afterDelay:5.0)
 	end
 
 	def did_not_answer
-		unless @tone.answer?
+		unless @tone.answer
 			@tone.answer = "Timeout"
 			next_round
 		end
