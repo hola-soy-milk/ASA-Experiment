@@ -1,7 +1,5 @@
 class Tone
 
-	include SoundsHelpers
-
 	attr_accessor :answer, :finished_playing
 
 	def initialize(file)
@@ -33,21 +31,6 @@ class Tone
 
 	def audioPlayerDidFinishPlaying(player, successfully:flag)
 		self.finished_playing.call
-	end
-
-	def did_not_answer
-		@tone.answer = "Timeout"
-		next_round
-	end
-
-	def next_round
-		if finished_with_van_noorden? && finished_with_miller_and_heise?
-			NSLog 'finished'
-		elsif finished_with_van_noorden?
-			start_miller_and_heise_test
-		else
-			start_van_noorden_test
-		end
 	end
 
 end

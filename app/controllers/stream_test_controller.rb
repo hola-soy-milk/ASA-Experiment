@@ -1,4 +1,7 @@
 class StreamTestController < UIViewController
+
+	include SoundsHelpers
+
 	def initWithTone(tone)
 		initWithNibName(nil, bundle:nil)
 		@tone = tone
@@ -31,6 +34,23 @@ class StreamTestController < UIViewController
 
 	def show_choices
 		@question_view.hidden = false
+	end
+
+	def did_not_answer
+		unless @tone.answer?
+			@tone.answer = "Timeout"
+			next_round
+		end
+	end
+
+	def next_round
+		if finished_with_van_noorden? && finished_with_miller_and_heise?
+			NSLog 'finished'
+		elsif finished_with_van_noorden?
+			start_miller_and_heise_test
+		else
+			start_van_noorden_test
+		end
 	end
 
 end
