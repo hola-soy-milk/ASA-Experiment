@@ -30,6 +30,7 @@ class StreamTestController < UIViewController
 	end
 
 	def show_choices
+		@question_view.hidden = false
 	end
 
 end
