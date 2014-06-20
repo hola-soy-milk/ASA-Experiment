@@ -1,8 +1,8 @@
 class AppDelegate
-  attr_accessor :van_hoorden_sounds, :miller_and_heise_sounds
+  attr_accessor :van_hoorden_sounds, :miller_and_heise_sounds, :window
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
-    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
+    self.window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
     start_experiment
   end
 
@@ -12,8 +12,8 @@ class AppDelegate
     self.miller_and_heise_sounds = NSFileManager.defaultManager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /mh/}
     self.miller_and_heise_sounds.map! {|file| Tone.new(file)}
     # NSLog "#{self.van_hoorden_sounds.size} #{self.miller_and_heise_sounds.size}"
-    @window.rootViewController = TutorialController.new
-    @window.makeKeyAndVisible
+    self.window.rootViewController = TutorialController.new
+    self.window.makeKeyAndVisible
     true
   end
 end
