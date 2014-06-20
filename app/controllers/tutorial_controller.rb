@@ -23,8 +23,14 @@ class TutorialController < UIViewController
 	end
 
 	def viewDidLoad
-		@one_button.when(UIControlEventTouchUpInside) {@sound1.play}
-		@two_button.when(UIControlEventTouchUpInside) {@sound2.play}
+		@one_button.when(UIControlEventTouchUpInside) do
+			@sound2.stop if @sound2.is_playing?
+			@sound1.play
+		end
+		@two_button.when(UIControlEventTouchUpInside) do
+			@sound1.stop if @sound1.is_playing?
+			@sound2.play
+		end
 		@start_button.when(UIControlEventTouchUpInside) do
 			if @type == :miller_and_heise
 				start_miller_and_heise_test
