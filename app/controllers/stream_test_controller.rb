@@ -16,6 +16,10 @@ class StreamTestController < UIViewController
 		@question_view = @layout.question
 		@question_view.hidden = true
 
+		@one_stream_button = @layout.one_sound_button
+		@two_stream_button = @layout.two_sound_button
+		@cant_say_button = @layout.cant_say_sound_button if @tone.type == "Van Noorden"
+
 		@play_button = @layout.play_button
 	end
 
@@ -25,6 +29,35 @@ class StreamTestController < UIViewController
 			@tone.play
 			@play_button.enabled = false
 		end
+
+		@one_stream_button.when(UIControlEventTouchUpInside) { one_touched }
+		@two_stream_button.when(UIControlEventTouchUpInside) { two_touched }
+		if @cant_say_button
+			@cant_say_button.when(UIControlEventTouchUpInside) { cant_say_touched }
+		end
+	end
+
+	def one_touched
+		if @tone.type == "Van Noorden"
+			@tone.answer = '1'
+		else
+			@tone.answer = 'Trill'
+		end
+		next_round
+	end
+
+	def two_touched
+		if @tone.type == 'Van Noorden'
+			@tone.answer = '2'
+		else
+			@tone.answer = 'Coherence'
+		end
+		next_round
+	end
+
+	def cant_say_touched
+		@tone.answer = 'Unsure'
+		next_round
 	end
 
 	def shouldAutorotate
