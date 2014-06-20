@@ -4,11 +4,13 @@ class TutorialController < UIViewController
 
 		if finished_with_van_noorden?
 			@layout = TutorialLayoutMillerAndHeise.new
+			@sound1 = Tone.new('tutorial_1.wav')
+			@sound2 = Tone.new('tutorial_2.wav')
 			@type = :miller_and_heise
 		else
 			@layout = TutorialLayout.new
-			@sound1 = Tone.new('tutorial_1.wav')
-			@sound2 = Tone.new('tutorial_2.wav')
+			@sound1 = Tone.new('tutorial_3.wav')
+			@sound2 = Tone.new('tutorial_4.wav')
 			@type = :van_noorden
 		end
 
@@ -32,6 +34,8 @@ class TutorialController < UIViewController
 			@sound2.play
 		end
 		@start_button.when(UIControlEventTouchUpInside) do
+			@sound1.stop if @sound1.is_playing?
+			@sound2.stop if @sound2.is_playing?
 			if @type == :miller_and_heise
 				start_miller_and_heise_test
 			else
