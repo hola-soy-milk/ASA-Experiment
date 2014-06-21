@@ -1,7 +1,7 @@
 class MillerAndHeiseLayout < MotionKit::Layout
 
-	view :one_stream_button
-	view :two_stream_button
+	view :one_sound_button
+	view :two_sound_button
 	view :play_button
 	view :question
 
@@ -9,8 +9,8 @@ class MillerAndHeiseLayout < MotionKit::Layout
 		background_color UIColor.whiteColor
 		add UIView, :question do
 			@label = add UILabel, :question_label
-			add UIButton.buttonWithType(UIButtonTypeSystem), :one_stream_button
-			add UIButton.buttonWithType(UIButtonTypeSystem), :two_stream_button
+			add UIButton.buttonWithType(UIButtonTypeSystem), :one_sound_button
+			add UIButton.buttonWithType(UIButtonTypeSystem), :two_sound_button
 			add UILabel, :question_below_label
 		end
 		@play_button = add UIButton.buttonWithType(UIButtonTypeSystem), :play_button
@@ -20,7 +20,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 		frame [[0,0], ['100%', '100%']]
 	end
 
-	def one_stream_button_style
+	def one_sound_button_style
 		title 'Trill'
 		font UIFont.systemFontOfSize(24)
 		height '25'
@@ -28,7 +28,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 		center ['25%', '100%']
 	end
 
-	def two_stream_button_style
+	def two_sound_button_style
 		title 'Two'
 		font UIFont.systemFontOfSize(24)
 		height '25'

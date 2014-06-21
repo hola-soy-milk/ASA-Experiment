@@ -30,7 +30,7 @@ module SoundsHelpers
 
 	end
 
-	def star_miller_and_heise_test
+	def start_miller_and_heise_test
 		tone = miller_and_heise_sounds.sample
 		while tone.answer do
 			tone = miller_and_heise_sounds.sample
