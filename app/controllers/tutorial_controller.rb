@@ -2,16 +2,16 @@ class TutorialController < UIViewController
 	include SoundsHelpers
 	def loadView
 
-		if finished_with_miller_and_heise?
-			@layout = TutorialLayout.new
-			@sound1 = Tone.new('tutorial_3.wav')
-			@sound2 = Tone.new('tutorial_4.wav')
-			@type = :van_noorden
-		else
+		if finished_with_van_noorden?
 			@layout = TutorialLayoutMillerAndHeise.new
 			@sound1 = Tone.new('tutorial_1.wav')
 			@sound2 = Tone.new('tutorial_2.wav')
 			@type = :miller_and_heise
+		else
+			@layout = TutorialLayout.new
+			@sound1 = Tone.new('tutorial_3.wav')
+			@sound2 = Tone.new('tutorial_4.wav')
+			@type = :van_noorden
 		end
 
 		@sound1.finished_playing = Proc.new {NSLog "Finished"}
