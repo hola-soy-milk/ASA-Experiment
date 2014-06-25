@@ -16,9 +16,23 @@ module SoundsHelpers
 		UIApplication.sharedApplication.delegate.miller_and_heise_sounds
 	end
 
+	def set_subject(subject)
+		UIApplication.sharedApplication.delegate.subject = subject
+	end
+
+	def subject
+		UIApplication.sharedApplication.delegate.subject
+	end
+
+	def load_controller(controller)
+		app_window.rootViewController = controller
+		app_window.makeKeyAndVisible
+	end
+
 	def app_window
 		UIApplication.sharedApplication.delegate.window
 	end
+
 
 	def start_van_noorden_test
 		tone = van_noorden_sounds.sample
