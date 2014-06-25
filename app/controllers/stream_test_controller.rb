@@ -2,6 +2,7 @@ class StreamTestController < UIViewController
 	include SoundsHelpers
 
 	def initWithTone(tone)
+		app_delegate.test_count += 1
 		initWithNibName(nil, bundle:nil)
 		@tone = tone
 		tone.finished_playing = Proc.new {show_choices}
@@ -77,7 +78,7 @@ class StreamTestController < UIViewController
 	end
 
 	def next_round
-		NSLog @tone.answer 
+		NSLog "File: #{file_prefix} with answer #{@tone.answer}"
 		if finished_with_van_noorden? && finished_with_miller_and_heise?
 			NSLog 'finished'
 		elsif finished_with_van_noorden?
