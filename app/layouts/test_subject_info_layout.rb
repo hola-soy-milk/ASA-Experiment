@@ -1,6 +1,6 @@
 class TestSubjectInfoLayout < MotionKit::Layout
 
-	@left = '25% + 10'
+
 
 	view :id_field
 	view :promille_field
@@ -9,8 +9,8 @@ class TestSubjectInfoLayout < MotionKit::Layout
 
 	def layout
 		background_color UIColor.whiteColor
-		add UITextField, :id_field
-		add UITextField, :promille_field
+		add NumberPadTextField, :id_field
+		add NumberPadTextField, :promille_field
 		add UISwitch, :alcohol_switch
 		add UILabel, :id_label
 		add UILabel, :promille_label
@@ -24,40 +24,51 @@ class TestSubjectInfoLayout < MotionKit::Layout
 		height '18'
 		width '100'
 		center position
-		textAlignment UITextAlignmentLeft
+		textAlignment UITextAlignmentRight
 	end
 
 	def id_label_style
-		label_default(['10', '20%'], 'Subject ID:')
+		label_default([50, '20%'], 'Subject ID:')
 	end
 
 	def promille_label_style
-		label_default(['10', '40%'], 'Promille:')
+		label_default([50, '40%'], 'Promille:')
 	end
 
 	def switch_label_style
-		label_default(['10', '30%', 'Alcohol?'])
+		label_default([50, '30%'], 'Alcohol?')
 	end
 
 	def id_field_style
+		height '18'
 		width '200'
-		center [@left, '20%']
+		center ['75%', '20%']
+		textAlignment UITextAlignmentLeft
 	end
 
 	def alcohol_switch_style
-		center [@left, '30%']
+		center ['50%', '30%']
 	end
 
 	def promille_field_style
+		height '18'
 		width '200'
-		center [@left, '40%']
+		center ['75%', '40%']
+		textAlignment UITextAlignmentLeft
 	end
 
 	def done_button_style
-		title 'Done'
+		title 'Begin Testing'
 		height '48'
 		width '100% - 10'
 		font UIFont.systemFontOfSize(48)
-		center ['50%', '80%']
+		center ['50%', '50%']
+	end
+end
+
+
+class NumberPadTextField < UITextField
+	def keyboardType
+		UIKeyboardTypeDecimalPad
 	end
 end
