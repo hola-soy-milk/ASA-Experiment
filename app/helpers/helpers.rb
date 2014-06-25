@@ -1,4 +1,4 @@
-module helpers
+module Helpers
 	def set_subject(subject)
 		UIApplication.sharedApplication.delegate.subject = subject
 	end
