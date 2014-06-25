@@ -1,5 +1,5 @@
 class AppDelegate
-  attr_accessor :van_hoorden_sounds, :miller_and_heise_sounds, :window
+  attr_accessor :van_hoorden_sounds, :miller_and_heise_sounds, :window, :subject
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     self.window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
