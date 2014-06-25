@@ -80,7 +80,7 @@ class StreamTestController < UIViewController
 	def next_round
 		NSLog "File: #{file_prefix} with answer #{@tone.answer}"
 		if finished_with_van_noorden? && finished_with_miller_and_heise?
-			NSLog 'finished'
+			app_delegate.start_experiment
 		elsif finished_with_van_noorden?
 			start_miller_and_heise_test
 		else
