@@ -23,16 +23,16 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	def one_sound_button_style
 		title 'Trill'
 		font UIFont.systemFontOfSize(24)
-		height '25'
-		width '100'
+		height '100'
+		width '200'
 		center ['25%', '100%']
 	end
 
 	def two_sound_button_style
 		title 'Two'
 		font UIFont.systemFontOfSize(24)
-		height '25'
-		width '100'
+		height '100'
+		width '200'
 		center ['75%', '100%']
 	end
 
@@ -60,7 +60,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 		font UIFont.systemFontOfSize(18)
 		height '24'
 		width '100%'
-		center ['60%', '50%']
+		center ['50%', '60%']
 		textAlignment UITextAlignmentCenter
 	end
 end

@@ -25,24 +25,24 @@ class VanNoordenLayout < MotionKit::Layout
 	def one_sound_button_style
     title 'One'
 		font UIFont.systemFontOfSize(24)
-		height '25'
-		width '100'
+		height '100'
+		width '200'
     center ['0% + 54', '100%']
   end
 
 	def two_sound_button_style
 		title 'Two'
 		font UIFont.systemFontOfSize(24)
-		height '25'
-		width '100'
+		height '100'
+		width '200'
 		center ['33% + 54', '100%']
 	end
 
 	def cant_say_sound_button_style
 		title "Unsure"
 		font UIFont.systemFontOfSize(24)
-		height '25'
-		width '100'
+		height '100'
+		width '200'
 		center ['66% + 54', '100%']
 	end
 
