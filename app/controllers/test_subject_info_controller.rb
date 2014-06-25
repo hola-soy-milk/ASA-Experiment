@@ -4,7 +4,7 @@ class TestSubjectInfoController < UIViewController
 		self.view =  @layout.view
 
 		@id_field = @layout.id_field
-		@alcohol_switch = @layout.alcohol_checkbox
+		@alcohol_switch = @layout.alcohol_switch
 		@promille_field = @layout.promille_field
 
 		@done_button = @layout.done_button
