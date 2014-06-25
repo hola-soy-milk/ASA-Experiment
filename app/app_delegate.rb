@@ -1,5 +1,5 @@
 class AppDelegate
-  attr_accessor :van_hoorden_sounds, :miller_and_heise_sounds, :window, :subject
+  attr_accessor :van_hoorden_sounds, :miller_and_heise_sounds, :window, :subject, :test_count
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     self.window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
@@ -7,6 +7,7 @@ class AppDelegate
   end
 
   def start_experiment
+    self.test_count = 0
     self.van_hoorden_sounds = NSFileManager.defaultManager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /vn/}
     self.van_hoorden_sounds.map! {|file| Tone.new(file)}
     self.miller_and_heise_sounds = NSFileManager.defaultManager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /mh/}
