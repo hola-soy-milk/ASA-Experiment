@@ -1,5 +1,13 @@
 module SoundsHelpers
 
+	def file_prefix
+		"#{subject.id}_#{subject.alcohol ? "A" : "N"}_#{app_delegate.test_count}"
+	end
+
+	def app_delegate
+		UIApplication.sharedApplication.delegate
+	end
+
 	def finished_with_van_noorden?
 		van_noorden_sounds.all? {|tone| tone.answer}
 	end
