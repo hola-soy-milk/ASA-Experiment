@@ -1,4 +1,5 @@
 class TestSubjectInfoController < UIViewController
+	include SoundsHelpers
 	def loadView
 		@layout = TestSubjectInfoLayout.new
 		self.view =  @layout.view
@@ -11,7 +12,7 @@ class TestSubjectInfoController < UIViewController
 	end
 
 	def viewDidLoad
-		@id_field.text = 'Subject ID'
+		@id_field.text = '1'
 		@alcohol_switch.on = false
 		@promille_field.text = '0'
 		@done_button.when(UIControlEventTouchUpInside) do
@@ -20,8 +21,7 @@ class TestSubjectInfoController < UIViewController
 			promille = @promille_field.text == '' ? 0 : @promille_field.text.to_f
 			subject = Subject.new(id, alcohol, promille)
 			set_subject subject
+			load_controller TutorialController.new
 		end
 	end
-
-
 end
