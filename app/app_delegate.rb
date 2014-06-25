@@ -12,7 +12,7 @@ class AppDelegate
     self.miller_and_heise_sounds = NSFileManager.defaultManager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /mh/}
     self.miller_and_heise_sounds.map! {|file| Tone.new(file)}
     # NSLog "#{self.van_hoorden_sounds.size} #{self.miller_and_heise_sounds.size}"
-    self.window.rootViewController = TutorialController.new
+    self.window.rootViewController = TestSubjectInfoController.new
     self.window.makeKeyAndVisible
     true
   end
