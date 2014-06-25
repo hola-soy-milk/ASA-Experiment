@@ -13,4 +13,5 @@ Motion::Project::App.setup do |app|
   app.name = 'ASA Experiment'
   app.frameworks += ["AVFoundation"]
   app.files_dependencies 'app/controllers/stream_test_controller.rb' => 'app/helpers/sounds_helpers.rb'
+  app.identifier = 'com.mt.asa-experiment'
 end
