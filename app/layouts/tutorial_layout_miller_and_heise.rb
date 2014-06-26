@@ -17,7 +17,7 @@ class TutorialLayoutMillerAndHeise < MotionKit::Layout
 
 	def label_default(position, label_text)
 		text label_text
-		font UIFont.systemFontOfSize(18)
+		font UIFont.systemFontOfSize(12)
 		height '18'
 		width '100%'
 		center position
