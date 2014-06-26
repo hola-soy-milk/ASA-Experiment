@@ -86,7 +86,11 @@ class StreamTestController < UIViewController
 		if finished_with_van_noorden? && finished_with_miller_and_heise?
 			app_delegate.start_experiment
 		elsif finished_with_van_noorden?
-			start_miller_and_heise_test
+			if not app_delegate.doing_part_2
+				load_controller TutorialController.new
+			else
+				start_miller_and_heise_test
+			end
 		else
 			start_van_noorden_test
 		end
