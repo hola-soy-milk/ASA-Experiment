@@ -30,9 +30,9 @@ class StreamTestController < UIViewController
 	def viewDidLoad
 		super
 		@play_button.when(UIControlEventTouchUpInside) do
-			@tone.play
-			@play_button.enabled = false
 			@question_view.hidden = false
+			@play_button.enabled = false
+			@tone.play
 		end
 
 		@one_stream_button.when(UIControlEventTouchUpInside) { one_touched }
