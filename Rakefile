@@ -17,4 +17,6 @@ Motion::Project::App.setup do |app|
   app.identifier = 'com.mt.asa-experiment'
 
   app.version = '0.2'
+  app.info_plist['UIFileSharingEnabled'] = true
+
 end
