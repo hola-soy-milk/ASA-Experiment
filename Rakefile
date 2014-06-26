@@ -16,7 +16,7 @@ Motion::Project::App.setup do |app|
   app.files_dependencies 'app/controllers/test_subject_info_controller.rb' => 'app/helpers/sounds_helpers.rb'
   app.identifier = 'com.mt.asa-experiment'
 
-  app.version = '0.2'
+  app.version = '0.3'
   app.info_plist['UIFileSharingEnabled'] = true
 
 end
