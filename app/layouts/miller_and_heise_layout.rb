@@ -63,7 +63,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	end
 
 	def question_below_label_style
-		text '(One twiller or two interwoven)'
+		text '(One trill or two interwoven)'
 		text_color UIColor.blackColor
 		font UIFont.systemFontOfSize(18)
 		height '24'

@@ -60,7 +60,7 @@ class TutorialLayout < MotionKit::Layout
 	end
 
 	def start_button_style
-		button_default(['50%', '90%'], 'Begin Part 2')
+		button_default(['50%', '90%'], 'Begin Part 1')
 	end
 
 
