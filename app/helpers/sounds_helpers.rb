@@ -1,5 +1,17 @@
 module SoundsHelpers
 
+	def save_file(tone)
+		file_path = NSHomeDirectory().stringByAppendingPathComponent("#{file_prefix(tone)}.txt")
+
+		while NSFileManager.defaultManager.fileExistsAtPath(file_path)
+			file_path = "#{file_path.stringByDeletingPathExtension} new.txt"
+		end
+
+		data = "#{file_prefix(tone)}, #{tone.answer}"
+
+		data.writeToFile(file_path, atomically: true, encoding: NSUTF8StringEncoding, error:nil)
+	end
+
 	def file_prefix(tone)
 		"#{subject.id}_#{subject.alcohol ? "A" : "N"}_#{tone.info}"
 	end
