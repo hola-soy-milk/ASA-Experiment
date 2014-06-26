@@ -1,7 +1,7 @@
 module SoundsHelpers
 
 	def save_file(tone)
-		file_path = NSHomeDirectory().stringByAppendingPathComponent("#{file_prefix(tone)}.txt")
+		file_path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0].stringByAppendingPathComponent("#{file_prefix(tone)}.txt")
 
 		while NSFileManager.defaultManager.fileExistsAtPath(file_path)
 			file_path = "#{file_path.stringByDeletingPathExtension} new.txt"
