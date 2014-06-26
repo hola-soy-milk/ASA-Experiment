@@ -4,19 +4,27 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	view :two_sound_button
 	view :play_button
 	view :question
+	view :answers
 
 	def layout
 		background_color UIColor.whiteColor
 		add UIView, :question do
 			@label = add UILabel, :question_label
+			add UILabel, :question_below_label
+		end
+		add UIView, :answers do
 			add UIButton.buttonWithType(UIButtonTypeSystem), :one_sound_button
 			add UIButton.buttonWithType(UIButtonTypeSystem), :two_sound_button
-			add UILabel, :question_below_label
 		end
 		@play_button = add UIButton.buttonWithType(UIButtonTypeSystem), :play_button
 	end
 
 	def question_style
+		frame [[0,0], ['100%', '100%']]
+	end
+
+
+	def answers_style
 		frame [[0,0], ['100%', '100%']]
 	end
 

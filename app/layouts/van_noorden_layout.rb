@@ -5,20 +5,26 @@ class VanNoordenLayout < MotionKit::Layout
 	view :cant_say_sound_button
 	view :play_button
 	view :question
+	view :answers
 
 	def layout
 		background_color UIColor.whiteColor
 		@play_button = add UIButton.buttonWithType(UIButtonTypeSystem), :play_button
 		add UIView, :question do
+			@label = add UILabel, :question_label
+			add UILabel, :question_below_label
+		end
+		add UIView, :answers do
 			@one_sound_button = add UIButton.buttonWithType(UIButtonTypeSystem), :one_sound_button
 			@two_sound_button = add UIButton.buttonWithType(UIButtonTypeSystem), :two_sound_button
 			@cant_say_sound_button = add UIButton.buttonWithType(UIButtonTypeSystem), :cant_say_sound_button
-			@label = add UILabel, :question_label
-			add UILabel, :question_below_label
 		end
 	end
 
 	def question_style
+		frame [[0,0], ['100%', '100%']]
+	end
+	def answers_style
 		frame [[0,0], ['100%', '100%']]
 	end
 
