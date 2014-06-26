@@ -1,7 +1,7 @@
 module SoundsHelpers
 
-	def file_prefix
-		"#{subject.id}_#{subject.alcohol ? "A" : "N"}_#{app_delegate.test_count}"
+	def file_prefix(tone)
+		"#{subject.id}_#{subject.alcohol ? "A" : "N"}_#{tone.info}"
 	end
 
 	def app_delegate
