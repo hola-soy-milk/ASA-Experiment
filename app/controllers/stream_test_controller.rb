@@ -17,6 +17,9 @@ class StreamTestController < UIViewController
 		@question_view = @layout.question
 		@question_view.hidden = true
 
+		@answers_view = @layout.answers
+		@answers_view.hidden = true
+
 		@one_stream_button = @layout.one_sound_button
 		@two_stream_button = @layout.two_sound_button
 		@cant_say_button = @layout.cant_say_sound_button if @tone.type == "Van Noorden"
@@ -29,6 +32,7 @@ class StreamTestController < UIViewController
 		@play_button.when(UIControlEventTouchUpInside) do
 			@tone.play
 			@play_button.enabled = false
+			@question_view.hidden = false
 		end
 
 		@one_stream_button.when(UIControlEventTouchUpInside) { one_touched }
@@ -66,7 +70,7 @@ class StreamTestController < UIViewController
 	end
 
 	def show_choices
-		@question_view.hidden = false
+		@answers_view.hidden = false
 		performSelector("did_not_answer", withObject:nil, afterDelay:5.0)
 	end
 
