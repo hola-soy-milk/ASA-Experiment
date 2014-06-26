@@ -1,12 +1,13 @@
 class Tone
 
-	attr_accessor :answer, :finished_playing
+	attr_accessor :answer, :finished_playing, :info
 
 	def initialize(file)
 		@tone = VanNoorden.new if file =~ /vn/
 		@tone = MillerAndHeise.new if file =~ /mh/
 		@sound = AVAudioPlayer.alloc.initWithContentsOfURL(NSBundle.mainBundle.URLForResource(file.stringByDeletingPathExtension, withExtension:file.pathExtension), error: nil)
 		@sound.delegate = self
+		self.info = file.stringByDeletingPathExtension
 	end
 
 	def play
