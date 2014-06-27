@@ -88,6 +88,7 @@ class StreamTestController < UIViewController
 			app_delegate.start_experiment
 		elsif finished_with_van_noorden?
 			if not app_delegate.doing_part_2
+        app_delegate.doing_part_2 = true
 				load_controller TutorialController.new
 			else
 				start_miller_and_heise_test
