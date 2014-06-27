@@ -13,7 +13,8 @@ module SoundsHelpers
 	end
 
 	def file_prefix(tone)
-		"#{subject.id}_#{subject.alcohol ? "A" : "N"}_#{tone.info}"
+    t = Time.now.strftime("%Y%m%d_%H%M%S")
+		"#{t}_#{subject.id}_#{subject.alcohol ? "A" : "N"}_#{tone.info}"
 	end
 
 	def app_delegate
