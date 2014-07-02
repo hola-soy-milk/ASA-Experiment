@@ -4,18 +4,19 @@ class TutorialLayoutMillerAndHeise < MotionKit::Layout
 	view :start_button
 
 	def layout
-		background_color UIColor.whiteColor
+		background_color UIColor.blackColor
 		add UILabel, :one_stream_label
 		add UILabel, :two_stream_label
 		add UILabel, :time_limit_label
 		add UILabel, :time_limit_middle_label
 		add UILabel, :time_limit_lower_label
-		add UIButton.buttonWithType(UIButtonTypeSystem), :play_one_button
-		add UIButton.buttonWithType(UIButtonTypeSystem), :play_two_button
-		add UIButton.buttonWithType(UIButtonTypeSystem), :start_button
+		add RoundCorneredButton.systemButton, :play_one_button
+		add RoundCorneredButton.systemButton, :play_two_button
+		add RoundCorneredButton.systemButton, :start_button
 	end
 
 	def label_default(position, label_text)
+    text_color UIColor.whiteColor
 		text label_text
 		font UIFont.systemFontOfSize(12)
 		height '18'
@@ -46,7 +47,7 @@ class TutorialLayoutMillerAndHeise < MotionKit::Layout
 	def button_default(position, label_text)
 			title label_text
 			font UIFont.systemFontOfSize(24)
-			height '18'
+			height '50'
 			width '100%'
 			center position
 	end

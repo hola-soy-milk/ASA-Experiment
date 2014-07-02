@@ -8,7 +8,7 @@ class TestSubjectInfoLayout < MotionKit::Layout
 	view :done_button
 
 	def layout
-		background_color UIColor.whiteColor
+		background_color UIColor.blackColor
 		add NumberPadTextField, :id_field
 		add NumberPadTextField, :promille_field
 		add UISwitch, :alcohol_switch
@@ -20,6 +20,7 @@ class TestSubjectInfoLayout < MotionKit::Layout
 
 	def label_default(position, label_text)
 		text label_text
+    text_color UIColor.whiteColor
 		font UIFont.systemFontOfSize(18)
 		height '18'
 		width '100'
@@ -41,6 +42,7 @@ class TestSubjectInfoLayout < MotionKit::Layout
 
 	def id_field_style
 		height '18'
+    text_color UIColor.whiteColor
 		width '200'
 		center ['75%', '20%']
 		textAlignment UITextAlignmentLeft
@@ -52,6 +54,7 @@ class TestSubjectInfoLayout < MotionKit::Layout
 
 	def promille_field_style
 		height '18'
+    text_color UIColor.whiteColor
 		width '200'
 		center ['75%', '40%']
 		textAlignment UITextAlignmentLeft

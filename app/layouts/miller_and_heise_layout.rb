@@ -7,16 +7,16 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	view :answers
 
 	def layout
-		background_color UIColor.whiteColor
+		background_color UIColor.blackColor
 		add UIView, :question do
 			@label = add UILabel, :question_label
 			add UILabel, :question_below_label
 		end
 		add UIView, :answers do
-			add UIButton.buttonWithType(UIButtonTypeSystem), :one_sound_button
-			add UIButton.buttonWithType(UIButtonTypeSystem), :two_sound_button
+      add RoundCorneredButton.systemButton, :one_sound_button
+      add RoundCorneredButton.systemButton, :two_sound_button
 		end
-		@play_button = add UIButton.buttonWithType(UIButtonTypeSystem), :play_button
+		@play_button = add RoundCorneredButton.systemButton, :play_button
 	end
 
 	def question_style
@@ -32,21 +32,21 @@ class MillerAndHeiseLayout < MotionKit::Layout
 		title 'Trill'
 		font UIFont.systemFontOfSize(24)
 		height '100'
-		width '200'
-		center ['25%', '100%']
+		width '100'
+		center ['25%', '90%']
 	end
 
 	def two_sound_button_style
 		title 'Two'
 		font UIFont.systemFontOfSize(24)
 		height '100'
-		width '200'
-		center ['75%', '100%']
+		width '100'
+		center ['75%', '90%']
 	end
 
 	def play_button_style
 		title 'Play'
-		height '48'
+		height '60'
 		width '100% - 10'
 		font UIFont.systemFontOfSize(48)
 		center ['50%', '40%']
@@ -54,7 +54,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 
 	def question_label_style
 		text 'What can you hear?'
-		text_color UIColor.blackColor
+		text_color UIColor.whiteColor
 		font UIFont.systemFontOfSize(18)
 		height '24'
 		width '100%'
@@ -64,7 +64,7 @@ class MillerAndHeiseLayout < MotionKit::Layout
 
 	def question_below_label_style
 		text '(One trill or two interwoven)'
-		text_color UIColor.blackColor
+		text_color UIColor.whiteColor
 		font UIFont.systemFontOfSize(18)
 		height '24'
 		width '100%'
