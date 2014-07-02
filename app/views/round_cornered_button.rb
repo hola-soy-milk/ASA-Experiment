@@ -4,7 +4,11 @@ class RoundCorneredButton < UIButton
     if highlighted
       self.layer.borderColor = UIColor.lightGrayColor.CGColor
     else
-      self.layer.borderColor = UIColor.blueColor.CGColor
+      if self.isEnabled
+        self.layer.borderColor = UIColor.blueColor.CGColor
+      else
+        self.layer.borderColor = UIColor.darkGrayColor.CGColor
+      end
     end
   end
 end
