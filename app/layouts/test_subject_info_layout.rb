@@ -15,7 +15,7 @@ class TestSubjectInfoLayout < MotionKit::Layout
 		add UILabel, :id_label
 		add UILabel, :promille_label
 		add UILabel, :switch_label
-		add UIButton.buttonWithType(UIButtonTypeSystem), :done_button
+		add RoundCorneredButton.systemButton, :done_button
 	end
 
 	def label_default(position, label_text)
