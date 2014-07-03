@@ -17,12 +17,14 @@ class StreamTestController < UIViewController
 		@question_view = @layout.question
 		@question_view.hidden = true
 
-		@answers_view = @layout.answers
-		@answers_view.hidden = true
-
 		@one_stream_button = @layout.one_sound_button
 		@two_stream_button = @layout.two_sound_button
 		@cant_say_button = @layout.cant_say_sound_button if @tone.type == "Van Noorden"
+
+    @buttons = [@one_stream_button, @two_stream_button]
+    @buttons << @cant_say_button if @tone.type == "Van Noorden"
+
+    @buttons.each {|button| button.enabled = false}
 
 		@play_button = @layout.play_button
 	end
@@ -55,7 +57,7 @@ class StreamTestController < UIViewController
 		if @tone.type == 'Van Noorden'
 			@tone.answer = '2'
 		else
-			@tone.answer = 'Coherence'
+			@tone.answer = 'Interwoven'
 		end
 		next_round
 	end
@@ -70,7 +72,7 @@ class StreamTestController < UIViewController
 	end
 
 	def show_choices
-		@answers_view.hidden = false
+    @buttons.each {|button| button.enabled = true}
 		performSelector("did_not_answer", withObject:nil, afterDelay:5.0)
 	end
 
