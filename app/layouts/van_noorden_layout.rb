@@ -5,7 +5,6 @@ class VanNoordenLayout < MotionKit::Layout
 	view :cant_say_sound_button
 	view :play_button
 	view :question
-	view :answers
 
 	def layout
 		background_color UIColor.blackColor
@@ -14,11 +13,9 @@ class VanNoordenLayout < MotionKit::Layout
 			@label = add UILabel, :question_label
 			add UILabel, :question_below_label
 		end
-		add UIView, :answers do
-			@one_sound_button = add RoundCorneredButton.systemButton, :one_sound_button
-			@two_sound_button = add RoundCorneredButton.systemButton, :two_sound_button
-			@cant_say_sound_button = add RoundCorneredButton.systemButton, :cant_say_sound_button
-		end
+    @one_sound_button = add RoundCorneredButton.systemButton, :one_sound_button
+    @two_sound_button = add RoundCorneredButton.systemButton, :two_sound_button
+    @cant_say_sound_button = add RoundCorneredButton.systemButton, :cant_say_sound_button
 	end
 
 	def question_style

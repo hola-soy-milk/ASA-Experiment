@@ -4,7 +4,6 @@ class MillerAndHeiseLayout < MotionKit::Layout
 	view :two_sound_button
 	view :play_button
 	view :question
-	view :answers
 
 	def layout
 		background_color UIColor.blackColor
@@ -12,10 +11,8 @@ class MillerAndHeiseLayout < MotionKit::Layout
 			@label = add UILabel, :question_label
 			add UILabel, :question_below_label
 		end
-		add UIView, :answers do
-      add RoundCorneredButton.systemButton, :one_sound_button
-      add RoundCorneredButton.systemButton, :two_sound_button
-		end
+    add RoundCorneredButton.systemButton, :one_sound_button
+    add RoundCorneredButton.systemButton, :two_sound_button
 		@play_button = add RoundCorneredButton.systemButton, :play_button
 	end
 
