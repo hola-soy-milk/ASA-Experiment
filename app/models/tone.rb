@@ -26,6 +26,10 @@ class Tone
 		@tone.type
 	end
 
+  def file_type
+    @tone.file_type
+  end
+
 	def layout
 		@tone.layout
 	end
@@ -46,6 +50,10 @@ class VanNoorden
 		'Van Noorden'
 	end
 
+  def file_type
+    'vn'
+  end
+
 
 
 end
@@ -59,5 +67,9 @@ class MillerAndHeise
 	def type
 		'Miller & Heise'
 	end
+
+  def file_type
+    'mh'
+  end
 
 end
