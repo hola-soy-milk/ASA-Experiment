@@ -3,18 +3,15 @@ module SoundsHelpers
 	def save_file(tone)
 		file_path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true)[0].stringByAppendingPathComponent("#{file_prefix(tone)}.txt")
 
-		while NSFileManager.defaultManager.fileExistsAtPath(file_path)
-			file_path = "#{file_path.stringByDeletingPathExtension} new.txt"
-		end
+    data = "#{tone.info}: #{tone.answer}"
 
-		data = "#{file_prefix(tone)}, #{tone.answer}"
+    File.open(file_path, 'a') {|file| file.puts data}
 
-		data.writeToFile(file_path, atomically: true, encoding: NSUTF8StringEncoding, error:nil)
+	#	data.writeToFile(file_path, atomically: true, encoding: NSUTF8StringEncoding, error:nil)
 	end
 
 	def file_prefix(tone)
-    t = Time.now.strftime("%Y%m%d_%H%M%S")
-		"#{t}_#{subject.id}_#{subject.alcohol ? "A" : "N"}_#{tone.info}"
+    "#{'%02d' % subject.id}_#{subject.alcohol ? "A" : "N"}_#{tone.file_type}_#{app_delegate.time_of_test}"
 	end
 
 	def app_delegate
