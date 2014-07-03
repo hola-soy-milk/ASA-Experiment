@@ -11,6 +11,9 @@ class AppDelegate
     self.doing_part_2 = false
     self.van_hoorden_sounds = NSFileManager.defaultManager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /vn/}
     self.van_hoorden_sounds.map! {|file| Tone.new(file)}
+    van_hoorden_dupe = self.van_hoorden_sounds.dup
+    self.van_hoorden_sounds = self.van_hoorden_sounds + van_hoorden_dupe
+    NSLog "#{self.van_hoorden_sounds.size}"
     self.miller_and_heise_sounds = NSFileManager.defaultManager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /mh/}
     self.miller_and_heise_sounds.map! {|file| Tone.new(file)}
     # NSLog "#{self.van_hoorden_sounds.size} #{self.miller_and_heise_sounds.size}"
