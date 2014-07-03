@@ -62,7 +62,7 @@ class TestSubjectInfoLayout < MotionKit::Layout
 
 	def done_button_style
 		title 'Begin Testing'
-		height '48'
+		height '60'
 		width '100% - 10'
 		font UIFont.systemFontOfSize(48)
 		center ['50%', '50%']
