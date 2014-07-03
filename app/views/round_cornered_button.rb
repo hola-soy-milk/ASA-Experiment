@@ -11,6 +11,16 @@ class RoundCorneredButton < UIButton
       end
     end
   end
+
+  def drawRect(rect)
+
+    if self.isEnabled
+      self.layer.borderColor = UIColor.blueColor.CGColor
+    else
+      self.layer.borderColor = UIColor.darkGrayColor.CGColor
+    end
+    super
+  end
 end
 
 def RoundCorneredButton.systemButton
