@@ -7,18 +7,22 @@ class AppDelegate
   end
 
   def start_experiment
-    @time_of_test = Time.now.strftime("%Y%m%d_%H%M%S")
+    @time_of_test = Time.now.strftime('%Y%m%d_%H%M%S')
 
     @test_count = 0
     @doing_part_2 = false
-    file_manager = NSFileManager.defaultManager
-    @van_hoorden_sounds = file_manager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select { |file| file =~ /vn/ }
-    @van_hoorden_sounds = @van_hoorden_sounds + @van_hoorden_sounds.dup
-    @van_hoorden_sounds.map! { |file| Tone.new(file) }
-    @miller_and_heise_sounds = file_manager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error:nil).select {|file| file =~ /mh/}
-    @miller_and_heise_sounds.map! { |file| Tone.new(file) }
+    setup_sounds
     @window.rootViewController = TestSubjectInfoController.new
     @window.makeKeyAndVisible
     true
+  end
+
+  def setup_sounds
+    file_manager = NSFileManager.defaultManager
+    @van_hoorden_sounds = file_manager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error: nil).select { |file| file =~ /vn/ }
+    @van_hoorden_sounds += @van_hoorden_sounds.dup
+    @van_hoorden_sounds.map! { |file| Tone.new(file) }
+    @miller_and_heise_sounds = file_manager.contentsOfDirectoryAtPath(NSBundle.mainBundle.resourcePath, error: nil).select { |file| file =~ /mh/ }
+    @miller_and_heise_sounds.map! { |file| Tone.new(file) }
   end
 end
